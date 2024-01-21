@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Outfit:wght@300;400;600;700&display=swap');
+
+:root{
+    --font-card-color:#173334;
+    --secondary-color: #febd2f;
+    --gray-color:#c4c4c4;
+}
+/*Inicializamos los estilos*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*CLases que voy haciendo*/
+.main-header{
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    position:sticky;
+    top: 0;
+    z-index: 1;
+}
+.main-banner{
+    background-color:grey;
+    height: 350px;
+    /* overflow: hidden; es para que si se desborda no se vea mal */
+    position: relative;
+}
+
+.banner-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Para que la imagen no se deforme*/
+    
+}
+.banner-info{
+    position: absolute;
+    left: 70%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    padding: 1rem;
+    font-size: 14px;
+    background-color: rgba(94, 93, 93, 0.756);    
+    color: rgba(255, 255, 255, rgba(255, 255, 255, 0.913));
+    width: 80%;
+    max-width: 500px;
+}
+
+.banner-info h1{
+    text-align: center;
+}
+
+.banner-info p{
+    text-indent: 1rem;
+    text-align: left;
+}
+.main-conteiner{
+    flex-grow: 1;
+    max-width: 1480px;
+    margin: 0 auto;
+
+}
+.main-footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/*#Clases de la sección card*/
+.card-container{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;/*Para si no cabe el espacio,sigan para abajo*/
+    gap: 1rem;
+    justify-content: center;
+}
+.card-wrapper{
+    /* flex:1;  */
+    display: flex;
+    justify-content: center;    
+}
+
+
+.card{
+    width: 350px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    color: var(--font-card-color);
+    font-size: 14px;
+}
+
+.card-header{
+    height: 235px;
+    position: relative;
+    
+}
+
+.actions{
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.actions i:hover{
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.card-header .card-img-2{
+     opacity: 0;
+}
+
+.card-header:hover .card-img-1{
+    opacity:0;
+}
+
+.card-header:hover .card-img-2{
+    opacity: 1;
+}
+
+.card-img{
+    height: 235px;
+    width: 100%;
+    object-fit: cover;/*Para que la imagen no se deforme*/
+    position: absolute;
+    transition: opacity .3s ease-in-out;
+}
+.card-main{
+    padding: 15px;
+}
+/*.card-category{
+     font-size: 14px; 
+    
+}*/
+.card-title{
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.card-average{
+    margin-bottom: 15px;
+}
+
+.card-price .price{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-price small{
+    font-size: 10px;
+}
+.card-price .normal-price{
+    opacity: .6;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+.card-footer{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.card-selection{
+    display: flex;
+    gap: 12px;
+}
+
+.card-selection .quantity{
+    flex: 4 1 0;
+}
+.quantity-actions{
+    display: flex;
+    border: 1px solid var(--gray-color);
+    border-radius: 11px;
+    overflow: hidden;
+    
+}
+
+.quantity-actions > *
+{
+    padding: 10px 15px;
+    flex: 1;
+    height: 41px;
+}
+
+.quantity button{
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: 16px
+}
+
+.add-to-card{
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--font-card-color);
+    padding: 11.3px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    line-height: 1;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;    
+    width: 100%;
+    cursor: pointer;    
+    transition: all .3s ease-in-out;
+}
+.add-to-card:hover{
+    background-color: var(--font-card-color);
+    color: var(--secondary-color);
+   
+}
+.card-selection .talla{
+    display: flex;
+    flex: 6 1 0;
+    flex-direction: column;  
+
+
+}
+
+.card-selection .talla select{
+    padding: 10px 35px 10px 15px;
+    width: 100%;
+    border: 1px solid var(--gray-color) ;
+    height: 42px;
+    line-height: 20px;
+    border-radius: 11px;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+    background: url('https://grocery-workdo.myshopify.com/cdn/shop/t/3/assets/arrow-acc-dark.svg') no-repeat;
+    background-size: 12px;
+    background-position: calc(100% - 15px) 50%;
+}
+
+/* #Sección footer */
+.footer-section{
+    padding: 1.5rem 1rem; /*16px que es el tamaño de fuente por defecto*/
+    color: rgba(255, 255, 255, .65);
+}
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;/*Espacio entre elementos*/
+    align-items: start;
+}
+.footer-social-link{
+    padding: 0 2rem; /* 1 rem = 16px que es el tamaño de fuente por defecto*/
+    text-decoration: none;/*Quita el subrayado*/
+    color: rgb(255, 255, 255);
+    /* Propiedades para alinear icono y texto */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all .5s;
+
+}
+
+.footer-social-link:hover{
+    color: rgb(238, 238, 44);
+    font-size: 20px ;
+}
+
+.footer-brand{
+    color: white;
+    text-align: center;
+
+}
+.footer-logo{
+    width: 64px;
+    height: 68px;
+    object-fit: cover;
+    display: block;/*para que sea arriba del texto*/
+    margin: 0 auto 8px;
+    
+}
+.footer-social-link > i{ /*El > busca un elemento que tenga esa clase y un hijo directo*/
+     /*color: rgb(238, 238, 44);*/
+     font-size: 24px;
+}
+
+.footer-contact{
+    padding-left: 3rem;
+}
+
+@media screen and (width >780px) {
+    
+    .main-footer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-footer section{
+       /* flex-grow: 1;
+        flex-basis: 0;*/
+        flex: 1 1 0;
+    }
+}
+
